@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-use-before-define */
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
 import { gameStart, lose } from '../src/index.js';
@@ -28,7 +29,6 @@ const brainPrime = () => {
   if (correctAnswer === userAnswer) {
     return 1;
   }
-  // eslint-disable-next-line no-use-before-define
   lose(userAnswer, correctAnswer, name);
   return 0;
 };

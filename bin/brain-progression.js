@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-use-before-define */
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
 import { gameStart, lose } from '../src/index.js';
@@ -38,14 +39,15 @@ function brainProgression() {
   const progressionLen = getRandomInt(progressMinLen, progressMaxLen);
   const hidden = getRandomInt(0, progressionLen - 1);
   const progression = generateProgression(progressionStart, progressionLen, progressionStep);
+
   const correctAnswer = progression[hidden];
+
   console.log('What number is missing in the progression?');
   console.log(`Question: ${showProgression(progression, hidden)}`);
   const userAnswer = readlineSync.question('Your answer: ');
   if (parseInt(userAnswer, 10) === correctAnswer) {
     return 1;
   }
-  // eslint-disable-next-line no-use-before-define
   lose(userAnswer, correctAnswer, name);
   return 0;
 }

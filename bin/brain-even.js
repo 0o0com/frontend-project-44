@@ -16,7 +16,7 @@ const checkAnswer = (randomNumber, userAnswer) => {
     console.log('Correct!');
     return true;
   }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+  console.log(`${userAnswer} is wrong answer ;(. Correct answer was '${rightAnswer}'`);
   return false;
 };
 
